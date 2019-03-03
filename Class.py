@@ -6,7 +6,7 @@ class Class:
 
     #demand
 
-    def __init__(self, _id, _title, _teacher, _period, _max_capacity):
+    def __init__(self, _id, _title, _teacher, _period, _max_capacity, _current_capacity):
         if(_title != None):
             self.id = _id
             self.demand = 0
@@ -14,9 +14,11 @@ class Class:
             self.teacher = _teacher
             self.period = _period
             self.max_capacity = _max_capacity
+            
 
-            self.current_capacity = 0
-            self.current_students = []
+            self.current_capacity = _current_capacity
+            self.seats=self.max_capacity-self.current_capacity
+            #self.current_students = []
 
             self.class_num=Class.num_classes
             Class.num_classes+=1
@@ -39,11 +41,13 @@ class Class:
 
     #Returns the demand (number of people who signed up) / maximum capacity * 10 (ie: 60 signups, 20 seats, * 10 --> 30 credits)
     def get_required_credits(self):
-        return int(float(self.demand)/self.max_capacity*10)
+        if(self.seats>0):
+            return int(float(self.demand)/self.seats*10)
+        return 0
 
     def is_full(self):
         return self.current_capacity >= self.max_capacity
 
     def enrol_student(self, student):
-        self.current_students.append(student)
+        #self.current_students.append(student)
         self.current_capacity += 1

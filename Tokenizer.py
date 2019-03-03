@@ -19,5 +19,5 @@ def tokenize_class():
     row=docs_API.get_next_class_row()
     while row != []:
         print(row)
-        Class(row[0],row[1],row[2],row[3],row[4])
+        Class(row[0],row[1],row[2],row[3],row[4],row[6])
         row=docs_API.get_next_class_row()

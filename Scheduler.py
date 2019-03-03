@@ -12,7 +12,7 @@ import docs_API
 #
 
 
-dummy_class = Class(None, None, None, None, None)
+dummy_class = Class(None, None, None, None, None,None)
 dummy_student = Student(None, None, None, None, None, None)
 sheet_num=1
 
@@ -25,16 +25,19 @@ Tokenizer.tokenize_students(sheet_num)
 
 for i in range(len(Student.student_list)):
     student = dummy_student.pop_student()
+    student_row=docs_API.row_of_student(sheet_num,student.name)
     for class_num in student.class_list:
         _class = Class.class_list[class_num]
         if student.credits >= _class.get_required_credits() and not _class.is_full() and student.student_schedule[_class.period] == '':
             student.enrol(_class)
             _class.enrol_student(student)
-            docs_API.write_student(sheet_num,docs_API.row_of_student(sheet_num,
-                student.name), _class.period+8, _class.id)
+    for period in range(0,7):
+        if student.student_schedule[period] != '':
+            print(student.student_schedule[period])
+            docs_API.write_student(sheet_num,student_row, period+8, student.student_schedule[period])
     if '' in student.class_list:
         student.requeue()
-    docs_API.write_student(sheet_num,docs_API.row_of_student(sheet_num,student.name), 7, student.credits)
+    docs_API.write_student(sheet_num,student_row, 7, student.credits)
 
 for i in range(0, len(Class.class_list)):
     docs_API.write_class(i+2, 6, Class.class_list[i].get_required_credits())

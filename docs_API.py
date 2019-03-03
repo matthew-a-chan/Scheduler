@@ -26,7 +26,7 @@ def get_next_student_row(sheet_num):
     if(sheet_num==0):
         return student_sheets[sheet_num].row_values(student_num, 'UNFORMATTED_VALUE')
     else:
-        row_index_last_sheet=row_of_student(sheet_num-1,student_sheets[sheet_num].cell(student_num,1,'UNFORMATTED_VALUE').value)
+        row_index_last_sheet=student_num#row_of_student(sheet_num-1,student_sheets[sheet_num].cell(student_num,1,'UNFORMATTED_VALUE').value)
         return (student_sheets[sheet_num].row_values(student_num, 'UNFORMATTED_VALUE'),
                 student_sheets[sheet_num-1].range(row_index_last_sheet,7,row_index_last_sheet,14))
 

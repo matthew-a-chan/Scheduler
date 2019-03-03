@@ -14,10 +14,15 @@ import docs_API
 
 dummy_class = Class(None, None, None, None, None,None)
 dummy_student = Student(None, None, None, None, None, None)
-sheet_num=2
 
-#    def __init__ CLASS (self, _id, _title, _teacher, _period, _max_capacity):
-#    def __init__(self, _name, _id, _bet, _class_list):
+
+
+#########################################
+
+sheet_num=0
+
+#########################################
+
 
 
 Tokenizer.tokenize_class()

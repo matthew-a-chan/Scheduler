@@ -48,7 +48,7 @@ class Student:
 
     def enrol(self, _class):
         self.credits -= _class.get_required_credits()
-        self.student_schedule[_class.period] = _class.class_num
+        self.student_schedule[_class.period] = _class.id
 
     def requeue(self):
         Student.student_list_alt.append(self)

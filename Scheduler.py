@@ -14,7 +14,7 @@ import docs_API
 
 dummy_class = Class(None, None, None, None, None,None)
 dummy_student = Student(None, None, None, None, None, None)
-sheet_num=1
+sheet_num=2
 
 #    def __init__ CLASS (self, _id, _title, _teacher, _period, _max_capacity):
 #    def __init__(self, _name, _id, _bet, _class_list):
@@ -33,7 +33,6 @@ for i in range(len(Student.student_list)):
             _class.enrol_student(student)
     for period in range(0,7):
         if student.student_schedule[period] != '':
-            print(student.student_schedule[period])
             docs_API.write_student(sheet_num,student_row, period+8, student.student_schedule[period])
     if '' in student.class_list:
         student.requeue()

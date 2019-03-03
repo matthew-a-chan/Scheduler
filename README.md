@@ -36,11 +36,9 @@ well as inversely porportional to seats left in the class at the start of
 sorting phase.
 (ie: 
 A popular class: MATH100 has 2 seats left, but 10 applicants: Credits: c*10/2
-    where c is a constant -> let c = 5 -> 25 credits to enrol
+    where c is a constant -> let c = 5 -> 25 credits to enrol.
 --An unpopular class: ENGL100 has 43 seats left, but 10 applicants:
-    Credits: c*10/43 -> let c = 5 -> 1.15 -> Floor() to 1 credit to enrol
-
-Note: c being a constant doesn't affect prices other than linearly scaling 
+    Credits: c*10/43 -> let c = 5 -> 1.15 -> Floor() to 1 credit to enrol. Note: c being a constant doesn't affect prices other than linearly scaling 
 costs to all participants)
 
 By making the popular, small classes more expensive, it creates a more fair

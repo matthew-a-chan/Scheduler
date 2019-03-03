@@ -1,11 +1,12 @@
+Look to Github for a more updated readme
+
 This is a scheduler program that uses blind auctions to assign classes.
 
 It's written entirely in Python, and interfaces with the Google Drive API to enable input directly via Google Sheet forms, allowing for easy and efficient collection of data from potential students.
 
-Unfortunately, I didn't have the reasonably input 100's of people's worth of
-data, so I relied on random generation of input data from users (making the
-process seem random) but the system would be much more efficient with
-multiple intelligent entities providing logical data rather than random
+Unfortunately, I didn't have the time to reasonably input 100's of people's 
+worth of data, so I relied on random generation of input data from users (making the process seem random) but the system would be much more efficient 
+with multiple intelligent entities providing logical data rather than random
 numbers.
 
 Also, I've found that I'm severely restricted by the amount of Google API calls that I can make (100 calls every 100 seconds), limiting the max student body size to about 30 people (Obviously not ideal), though the algorithm works
@@ -55,6 +56,13 @@ the cycle of betting->sorting->registration->betting will repeat until every
 student is equally dissatisfied with their share of classes.
 
 
+
+TLDR;
+
+While this registration system is more of a game theory problem than an actual
+reasonable scheduler, it does serve the purpose of ensuring that everyone is
+atleast approximately the same amount of unhappy by the end of the scheduling
+period. (yay communism) Because it adjusts to given user input to make popular classes expensive and unpopular classes cheap, few people (if any) will end up being able to enrol in many popular classes, and few people will be given only unpopular classes. 
 
 
 
